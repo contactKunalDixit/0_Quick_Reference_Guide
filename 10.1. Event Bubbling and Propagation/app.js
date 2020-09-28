@@ -9,12 +9,12 @@ Q   What is the difference between the bubbling and the capture phase for events
 Q   How do you stop events from bubbling ?
 Q   How to control multiple listeners on the same object ?
 
-*   Capture is opposite to Bubbling and Capture is set to false by default .i.e. events bubble up the chain by default.
+*   Capture is opposite to Bubbling and Capture is set to false by default .i.e. default behaviour for events is to bubble up the chain.
 
 *   stopPropagation: Only stops the bubbling up the chain
 
 *   stopImmediatePropagation() will do two things: 
-*               Stop bubbling 
+*               Stop bubbling up the chain  ...AND
 *               Stop any other event listener (that follows thereafter) to work with this object
 
 
@@ -29,7 +29,7 @@ let m = document.querySelector("#m"),
     log = console.log;
 
 let highlight = (ev) => {
-    ev.stopPropagation();
+    ev.stopPropagation();   /* Stops bubbling for all events because stopPropagation has been added in function "highlight" which is being used by all object events coz of [m,d,p,s].forEach() */
     let target = ev.currentTarget;
     target.className = "pink";
 

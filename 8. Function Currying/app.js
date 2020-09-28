@@ -6,7 +6,7 @@
 
 
 
-*   Currying uses "RETURNED"      
+*   Currying ALWAYS uses "RETURNED"      
 
 */
 
