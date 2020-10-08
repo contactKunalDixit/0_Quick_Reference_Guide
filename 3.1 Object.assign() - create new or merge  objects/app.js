@@ -1,7 +1,7 @@
 /*
  *   object.assign()
  *       1. Creates a new object and RETURNS the value
- *       2. Copies content of one object into another and Returns the value
+ *       2. Copies content of one object into another and RETURNS the value
  *       3. Merges two objects together and RETURNS the value
  * 
  *  The object that has been used to merge or whose copy has been created doesnt get effected and stays unaltered. its only the target object (wether new or preexisting) that get altered.
