@@ -7,15 +7,21 @@
 ! ES6
 
 *  The better way to loop through objects is :
-    1)  to convert the object into an array
+    1)  to convert the object into an iterable Object(Array)
     2)  then, you loop through an array
 
     Convert an Object into an Array with :
-    a)  Object.keys :   creates an array that contains the properties of an object.
+    a)  Object.keys :   creates an iterable Object(array) 
+ that captures the properties(aka keys) of an object.
 
-    b)  Object.values   :   creates an array that contains the values of every property in an object
+    b)  Object.values   :   creates an iterable object(array) that captures the values of every property/key in an object
 
-    c)  Objct.entries    :  creates an array of arrays. Each inner array has two items. The first item is the property; the second item is the value.
+    c)  Objct.entries    :  creates an iterable object(array) of arrays. Each inner array has two items. The first item is the property; the second item is the value.
+
+    todo:   Once and object has been converted into an interable Object(array), all the built-in methods of Array object can be used i.e.: you can use: ...for(let prop of arr)...forEach()...filter()...map()...reduce()..etc
+    
+
+
 */
 
 const family = {
@@ -57,3 +63,4 @@ let entriesFunc = (arr) => {
 
 }
 entriesFunc(entries)
+
