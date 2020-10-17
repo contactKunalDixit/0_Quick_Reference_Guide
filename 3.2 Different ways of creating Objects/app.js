@@ -121,9 +121,12 @@ console.log("------------------------------------------------------")
 //! 4.  factory functions with CLOSURES
 
 
+// TO be revisited
+
+
 console.log("------------------------------------------------------")
 
-//! 5.  JS Class
+//! 5.  JS Class            Detailed explaination of JS classes concept in next file
 
 // JS class is just a syntantic sugar syntax for a constructor function functionality dicussed above in option3
 // Whatever you define in the construct function becomes part of specific instance of the object and the rest becomes part of the prototype
