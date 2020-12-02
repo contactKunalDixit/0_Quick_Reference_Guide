@@ -84,7 +84,7 @@ console.log(person.dob)
 
 // ! Creating a function to convert/ have the first three properties of the object converted into JSON before storing it in local storage. 
 
-// !A    ES5 way: function being creaed basis ES5   -   NO DESTRUCTURING
+// !A    ES5 way: function being creat  ed basis ES5   -   NO DESTRUCTURING
 
 function savePersonES5(someObj) {
     let id = Date.now();

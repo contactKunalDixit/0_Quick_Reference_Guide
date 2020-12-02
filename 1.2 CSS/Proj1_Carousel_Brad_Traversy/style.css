@@ -1,0 +1,174 @@
+/* CSS RESET */
+@import url("../../../1.\ CSS\ reset/reset.css");
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #333;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* CONTAINER SETTING */
+.slider {
+    position: relative;
+    /* positioned as relative: i.e. it is relative to the element's original position.We will be positioning the stuff within as absolute to this */
+    overflow: hidden;
+    /* Specifies what should happen if the content overflows an element's box. The overflow property only works for the BLOCK elements with a specified height
+    visible: default: Overflow is not clipped. It renders outside the element's box
+    hidden: overflow is clipped: and the rest of the content which was extending outside will be invisible
+    scroll: the overflow is clipped, but a scroll bar is added to see the rest of the content
+    
+    */
+    height: 100vh;
+    width: 100vw;
+    /* This container will always fill the whole viewport width and height irrespective of how big or small it'll be */
+}
+
+/* SLIDE */
+
+/* The below will make each slide completely overlay the container "Slider" 
+ Initially, keep the opacity value to be 0 (i.e. transparent) for all elements having ".slide" but will change to "1" (default) for every time, the specific element will be added the class ".current"
+ transition: creates a transition effect. needs 2 elements: element on which the transition effect should be applied, and the time duration within which this transition happens */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* if the element has a class of current, then it shows, thus setting opacity to 1 */
+.slide.current {
+    opacity: 1;
+}
+
+/* SLIDE Content setting */
+
+.slide .content {
+    /* This will only be sliding in when the element has the class "current", else, it'll be positioned absolute left -600px with opacity 0; */
+
+    position: absolute;
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    opacity: 0;
+    background-color: rgb(255, 255, 255, 0.4);
+    color: #333;
+    padding: 35px;
+}
+
+.slide .content h1 {
+    margin-bottom: 10px;
+}
+
+.slide.current .content {
+    opacity: 1;
+    transform: translateX(600px);
+    /* moves the element by 600px on X axis */
+    transition: all 0.7s ease-in-out 0.3s;
+    /* transition on all the properties i.e. both opacity and transform.
+    transition-property, transition-duration, transition-timing-function, transition-delay  */
+}
+
+
+/* BUTTON  POSITIONING */
+
+.buttons button#next {
+    position: absolute;
+    top: 50%;
+    /* top:50% means halfway down from top  */
+    transform: translateY(-50%);
+    /* top:50% just places the element starting tip at halfway in the middle, but to properly middle the element, do transform: translateY(-50%) */
+    right: 15px;
+    /* right:15px from the right edge, bcoz it should not be on the right edge of the screen */
+}
+
+.buttons button#prev {
+    position: absolute;
+    top: 50%;
+    /* top:50% means halfway down from top  */
+    transform: translateY(-50%);
+    /* top:50% just places the element starting tip at 50% in the middle, but to properly middle the element itself, do transform: translateY(-50%)*/
+
+    left: 15px;
+    /* left:15px from the right edge, bcoz it should not be on the right edge of the screen */
+}
+
+/* BUTTON Styling */
+.buttons button {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    /* changes the default square shape to a round  */
+    outline: none;
+    /* outline:none removes the sqaure outline which was appearing as a default  */
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: #333;
+}
+
+
+@media (max-width:500px){
+    .slide .content{
+        bottom: -300px;
+        left:0;
+        width:100%;
+    }
+
+     /* bottom : -300px hides it out at the bottom but when the class current is added, it brings it back from bottom and gives effect as sliding up*/
+    .slide.current .content{
+        transform: translateY(-300px)
+        
+    }
+}
+
+
+/* BACKGROUND IMAGES using pseudo selectors*/
+
+.slide:first-child {
+    background: url("./dan-carlson-HxOlRTqo_F0-unsplash.jpg") no-repeat center center/cover;
+}
+
+.slide:nth-child(2) {
+    /* background: url("./felipepelaquim-6zO5VKogoZE-unsplash.jpg") no-repeat top center/cover  or */
+
+    background-image: url("./felipepelaquim-6zO5VKogoZE-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.slide:nth-child(3) {
+    /* background:url("./paul-gaudriault-a-QH9MAAVNI-unsplash.jpg") no-repeat top center/ cover  or; */
+
+    background-image: url("./paul-gaudriault-a-QH9MAAVNI-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.slide:nth-child(4) {
+    /* background: url("./radek-skrzypczak-WlB8TsI_th0-unsplash.jpg") no-repeat top center/cover;  or*/
+
+    background-image: url("./radek-skrzypczak-WlB8TsI_th0-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.slide:nth-child(5) {
+    /* background: url("./revolt-164_6wVEHfI-unsplash.jpg") no-repeat center top/cover;     or*/
+
+    background-image: url("./revolt-164_6wVEHfI-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+
+}
