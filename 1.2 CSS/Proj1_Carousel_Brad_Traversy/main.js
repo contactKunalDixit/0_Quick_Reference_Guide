@@ -39,7 +39,7 @@ const nextSlide = () => {
     ! Check for below, though dioesnt seem that its required considering that we are anyways manually removing the current class in step 2, but check if its required in case of automation navigation loop
      */
 
-    /*After all of the above , we need to remove the class "current" again but with a little delay, hence the setTimeOut()*/
+    /** We could use below setTimeout callback function in case of manually removing class "current" through classList.remove() */
 
 
 
@@ -64,7 +64,7 @@ const prevSlide = () => {
         slides[slides.length - 1].classList.add("current");
     }
 
-    // After all of the above, we need to ermove the class "current" again but with a little delay, hence the setTimeOut()
+       /** We could use below setTimeout callback function in case of manually removing class "current" through classList.remove() */
 
     // setTimeout(() => {
     //     current.classList.remove("current");
@@ -82,13 +82,14 @@ next.addEventListener("click", (e) => {
     // If auto value is set to true AND the click event happens, the below will clear Interval and then reset it again to the value of intervalTime 
     if(auto){
         clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide,3000)
+        slideInterval = setInterval(nextSlide,intervalTime)
     }
 })
 
 prev.addEventListener("click", (e) => {
     console.dir(e);
     prevSlide();
+     // If auto value is set to true AND the click event happens, the below will clear Interval and then reset it again to the value of intervalTime 
     if(auto){
         clearInterval(slideInterval);
         slideInterval = setInterval(nextSlide,intervalTime)
