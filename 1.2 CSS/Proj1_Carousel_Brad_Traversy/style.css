@@ -133,7 +133,7 @@ body {
 /* BACKGROUND IMAGES using pseudo selectors*/
 
 .slide:first-child {
-    background: url("./dan-carlson-HxOlRTqo_F0-unsplash.jpg") no-repeat center center/cover;
+    background: url("./dan-carlson-HxOlRTqo_F0-unsplash.jpg") no-repeat center top/cover;
 }
 
 .slide:nth-child(2) {

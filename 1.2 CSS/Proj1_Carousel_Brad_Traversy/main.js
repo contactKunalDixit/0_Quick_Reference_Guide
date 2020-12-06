@@ -36,7 +36,7 @@ const nextSlide = () => {
 
 
     /*
-    ! Check for below, though dioesnt seem that its required considering that we are anyways manually removing the current class in step 2, but check if its required in case of automation navigation loop
+    ! Check for below, though it doesnt seem that its required considering that we are anyways manually removing the current class in step 2, but check if its required in case of automation navigation loop
      */
 
     /** We could use below setTimeout callback function in case of manually removing class "current" through classList.remove() */
