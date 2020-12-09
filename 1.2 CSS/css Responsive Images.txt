@@ -1,0 +1,65 @@
+CSS Responsive Image Tutorial:
+
+Q1:  How to make Images fluid/ responsive with CSS
+
+A:  Generally, To make an image responsive, you need to give a new value to its width property. Then, the height of the image will adjust itself automatically.
+
+    You SHOULD ALWAYS use RELATIVE units for the width property like 
+            Percentage
+            REM
+    rather than absolute units like pixels.
+    So instead of assigning width as 500px, you should use width as 50%
+
+
+Q2:  Should I use Media queries?
+
+A:  If you want your image to have different sizes from one device to another, then you will need to use media queries. Otherwise, you won't.
+    for e.g. your image has a 50% width for any kind of screen. But when you want to make it full-size for mobile devices, you need to get help from media queries:
+
+    @media only screen and(max-width:480px){
+            img{
+                width:100%;
+            }
+        }
+
+    So based on the media query rule, any device smallewr than 480px will take the full size of the width of the screen.
+
+
+Q3: Why is the max-width property not great?
+
+A:  It could be effective but doesnt work for every lind of screen size or device.
+
+    The max-width property sets a maximum width for an element, which does NOT allow the width of that element to be larger than its max-width value(but it can be smaller)
+
+    for e.g. if the image has a default width of 500px, and if your screen size has only 360px, then you won't be able to see the complete image, because there is not enough space:
+    
+        solution: 
+            img{
+                max-width:100%;
+                width:500px;
+            }
+    The above could be a solution but it will ONLY be effective till the image reaches its actual width of 500px; 
+            BUT it break the responsiveness if the device screen size goes beyond 500px. To fix this, you need to use the width property again, which makes the max-width property useless.
+
+
+A BETTER SOLUTION:
+
+To have more control over your images, CSS provides another property called 'object-fit'.
+
+img{
+
+width: 100% ;
+height: 300px ;
+object-fit: cover ;
+object-position: bottom ;
+
+}
+
+
+If needed, you can use the object-position property (in addition to object-fit) to focus on a specific part of the image. 
+
+
+
+
+
+
