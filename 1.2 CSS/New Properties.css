@@ -1,6 +1,8 @@
 
 
-  // 1.  Object-fit:cover/contain
+  // 1.   Images:                   Object-fit:cover/contain
+          Background-Images:        background-position:center;
+
 
   /*
 !To have more control over your images, CSS provides another property called 'object-fit'. 
@@ -43,7 +45,7 @@ a:after {
 
 //3.    transform = skew(-20deg)    :   To visually tilt the element;
 
-//4.    transfor: scale(0.6)        :   To scale up or down the element
+//4.    transform: scale(0.6)        :   To scale up or down the element
 
 h1 a{
     transform:scale(0.6)  
