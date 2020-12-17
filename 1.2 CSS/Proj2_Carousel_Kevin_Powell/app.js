@@ -50,7 +50,24 @@ const moveToSlide = (track, currentSlide, targetSlide) => {
 }
 
 
+const updateDots = (currentDot, targetDot) => {
+    currentDot.classList.remove("current-slide")
+    targetDot.classList.add("current-slide")
+}
 
+
+const hideShowArrows = (slides, prevButton, nextButton, targetIndex) => {
+    if (targetIndex === 0) {
+        prevButton.classList.add("is-hidden");
+        nextButton.classList.remove("is-hidden");
+    } else if (targetIndex === slides.length - 1) {
+        prevButton.classList.remove("is-hidden");
+        nextButton.classList.add("is-hidden");
+    } else {
+        prevButton.classList.remove("is-hidden")
+        nextNutton.classList.remove("is-hidden")
+    }
+}
 
 // When I click to right, Move slides ot the right
 nextButton.addEventListener("click", e => {
@@ -115,5 +132,20 @@ dotsNav.addEventListener("click", e => {
 
     /* clicking on the particular dot will take you to that particular image */
 
-    moveToSlide(track, currentSlide, targetSlide)
+    moveToSlide(track, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
+    hideShowArrows (slides, prevButton, nextButton, targetIndex)
+
+//     console.log(targetIndex === 0)
+// 
+//     if (targetIndex === 0) {
+//         prevButton.classList.add("is-hidden");
+//         nextButton.classList.remove("is-hidden");
+//     } else if (targetIndex === slides.length - 1) {
+//         prevButton.classList.remove("is-hidden");
+//         nextButton.classList.add("is-hidden");
+//     } else {
+//         prevButton.classList.remove("is-hidden")
+//         nextNutton.classList.remove("is-hidden")
+//     }
 })
